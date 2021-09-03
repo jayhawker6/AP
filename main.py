@@ -21,6 +21,16 @@ def speed(x):
 def size(x):
     ttl.pensize(x)
 # End of EZ turtle commands by Andrew G #
+ttl.hideturtle()
+i = 1
+def colorswitch():
+    global i
+    i += 1
+    if i % 2 == 1:
+        ttl.color("purple")
+    else:
+        ttl.color("magenta")
+speed(0)
 ttl.turtlesize(2)
 ttl.penup()
 down(150)
@@ -38,8 +48,17 @@ ttl.left(45)
 ttl.backward(50)
 ttl.forward(50)
 ttl.right(45)
-up(50)
-
-
+up(75)
+ttl.shape("circle")
+ttl.turtlesize(1.5)
+ttl.setheading(10)
+colorswitch()
+ttl.stamp()
+ttl.penup()
+for i in range(18):
+    colorswitch()
+    ttl.stamp()
+    ttl.forward(20)
+    ttl.left(20)
 # END OF PROGRAM #
 wn.exitonclick()
