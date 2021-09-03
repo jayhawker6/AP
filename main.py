@@ -21,7 +21,25 @@ def speed(x):
 def size(x):
     ttl.pensize(x)
 # End of EZ turtle commands by Andrew G #
+ttl.turtlesize(2)
+ttl.penup()
+down(150)
+ttl.pencolor("green")
+size(10)
+ttl.pendown()
+up(50)
+ttl.right(45)
+ttl.pencolor("lime")
+ttl.backward(50)
+ttl.forward(50)
+ttl.left(45)
+up(50)
+ttl.left(45)
+ttl.backward(50)
+ttl.forward(50)
+ttl.right(45)
+up(50)
 
 
 # END OF PROGRAM #
-wn.mainloop()
+wn.exitonclick()
