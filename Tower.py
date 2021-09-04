@@ -1,12 +1,34 @@
 # EZ turtle commands by Andrew G #
 import turtle
 ttl = turtle.Turtle()
-wn = turtle.Screen()
+wn = turtle.setup(1920, 1080, 0, 0)
 def speed(x):
     ttl.speed(x)
 def size(x):
     ttl.pensize(x)
 # End of EZ turtle commands by Andrew G #
-ttl.left(90)
+
+def drawblock(x):
+    ttl.setheading(0)
+    ttl.color(x, x)
+    ttl.begin_fill()
+    ttl.forward(100)
+    ttl.left(90)
+    ttl.forward(50)
+    ttl.left(90)
+    ttl.forward(100)
+    ttl.left(90)
+    ttl.forward(50)
+    ttl.end_fill()
+    ttl.backward(50)
+
+
+ttl.penup(), ttl.setpos(-50, -450), ttl.pendown()
+speed(0)
+for i in range(15):
+    if i % 2 == 1:
+        drawblock("blue")
+    else:
+        drawblock("purple")
 # END OF PROGRAM #
 wn.exitonclick()
