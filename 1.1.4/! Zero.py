@@ -1,6 +1,6 @@
 import turtle
 wn = turtle.Screen()
-ttl = turtle.Turtle
+ttl = turtle.Turtle()
 
 #CODE START#
 ln = 500
