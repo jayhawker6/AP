@@ -25,10 +25,12 @@ def drawblock(x):
 
 ttl.penup(), ttl.setpos(-50, -450), ttl.pendown()
 speed(0)
-for i in range(15):
+i = 0
+while True:
     if i % 2 == 1:
         drawblock("blue")
     else:
         drawblock("purple")
+    i += 1
 # END OF PROGRAM #
 wn.exitonclick()
