@@ -1,5 +1,6 @@
 #   a114_nested_loops_4.py 
-import turtle as turtle
+import turtle
+import random
 
 ttl = turtle.Turtle()
 ttl.penup()
@@ -43,11 +44,16 @@ def peakTwo(x,y):
             y = y + move_y
             ttl.goto(x,y)
         move_y = -1
-ttl.speed(0)
-peak(-200,0)
-peak(0,0)
-peakTwo(200,0)
-peakTwo(0,0)
-
-wn = turtle.Screen()
-wn.mainloop()
+colors = ['yellow', 'gold', 'orange', 'red', 'maroon', 'violet', 'magenta', 'purple', 'navy', 'blue', 'skyblue', 'cyan', 'turquoise', 'lightgreen', 'green', 'darkgreen', 'chocolate', 'brown', 'black', 'gray', 'white']
+def colorchange():
+    global colors
+    color = random.choice(colors)
+    ttl.pencolor(color), ttl.color(color)
+ttl.pensize(5)
+ttl.hideturtle()
+while True:
+    colorchange()
+    peak(-200,0)
+    peak(0,0)
+    peakTwo(200,0)
+    peakTwo(0,0)
