@@ -25,8 +25,29 @@ def peak(x,y):
             y = y + move_y
             ttl.goto(x,y)
         move_y = 1
+def peakTwo(x,y):
+    xend = x-200
+    yend = y-0
+    move_x = -1
+    move_y = -1
+    while (x > xend):
+
+        while (y > -100):
+            x = x + move_x
+            y = y + move_y
+            ttl.goto(x,y)
+        move_y = 1
+
+        while (y < yend):
+            x = x + move_x
+            y = y + move_y
+            ttl.goto(x,y)
+        move_y = -1
+ttl.speed(0)
 peak(-200,0)
 peak(0,0)
+peakTwo(200,0)
+peakTwo(0,0)
 
 wn = turtle.Screen()
 wn.mainloop()
