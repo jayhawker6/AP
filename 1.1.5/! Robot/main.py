@@ -21,8 +21,8 @@ def turn_left():
 #----- init screen
 wn = turtle.Screen()
 wn.setup(width=screen_w, height=screen_h)
-robot_image = "robot.gif"
-wn.addshape(name=robot_image,shape=None)
+robot_image = "%/AP/1.1.5/! Robot/robot.gif"
+wn.addshape(robot_image)
 
 #----- init robot
 robot = turtle.Turtle(shape=robot_image)
