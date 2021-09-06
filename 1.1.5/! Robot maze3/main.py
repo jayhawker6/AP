@@ -47,7 +47,7 @@ robot.speed(2)
 robot.showturtle()
 
 # ---- TODO: change maze here
-wn.bgpic("assets/maze1.png")  # other file names should be maze2.png, maze3.png
+wn.bgpic("assets/maze2.png")  # other file names should be maze2.png, maze3.png
 
 # ---- TODO: begin robot movement here
 def solveOne():
