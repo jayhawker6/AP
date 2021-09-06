@@ -30,3 +30,13 @@ Once this is done then delete the local repository folder using file explorer. O
   - *Snippet*
   - *Jupyter*
   - *Markdownlint*
+
+# IMPORTANT!
+
+### ***⚠ IN VSCODE FOR FILE REFERENCES TO WORK YOU NEED TO GO IN THE TOP LEFTHAND CORNER TO:***
+
+> *File > Preferences > Settings > Python > Terminal > Execute In File Dir > Mark as [`X`]*
+
+Or alternativley
+
+> *File > Preferences > Settings > Search Settings: `"Execute In File Dir"` > Mark as [`X`]*
