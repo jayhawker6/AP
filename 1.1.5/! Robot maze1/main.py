@@ -31,7 +31,7 @@ def turn_right():
 # ----- init screen
 wn = turtle.Screen()
 wn.setup(width=screen_w, height=screen_h)
-robot_image = "robot.gif"
+robot_image = "assets/robot.gif"
 wn.addshape(robot_image)
 
 # ----- init robot
@@ -47,7 +47,7 @@ robot.speed(2)
 robot.showturtle()
 
 # ---- TODO: change maze here
-wn.bgpic("maze1.png")  # other file names should be maze2.png, maze3.png
+wn.bgpic("assets/maze2.png")  # other file names should be maze2.png, maze3.png
 
 # ---- TODO: begin robot movement here
 def solveOne():
@@ -67,8 +67,37 @@ def solveOne():
         move()
         turn_right()
         w1 += 1
-if wn.bgpic() == "maze1.png":
+def solveTwo():
+    w2 = 0
+    while w2 < 3:
+        move()
+        w2 += 1
+    turn_right()
+    w2 = 0
+    while w2 < 2:
+        move()
+        w2 += 1
+    w2 = 0
+    robot.goto(startx,starty)
+    while w2 < 3:
+        move() #The move function IS a nested loop. I changed it to have a for loop and a variable to decide how many times to run.
+        w2 += 1
+    w2 = 0
+    turn_left()
+    while w2 < 3:
+        move()
+        w2 += 1
+    w2 = 0
+    while w2 < 1:
+        turn_left()
+        move()
+        w2+=1
+        
+
+if wn.bgpic() == "assets/maze1.png":
     solveOne()
+elif wn.bgpic() == "assets/maze2.png":
+    solveTwo()
 
 # ---- end robot movement
 
