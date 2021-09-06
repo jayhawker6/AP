@@ -47,7 +47,7 @@ robot.speed(2)
 robot.showturtle()
 
 # ---- TODO: change maze here
-wn.bgpic("assets/maze2.png")  # other file names should be maze2.png, maze3.png
+wn.bgpic("assets/maze3.png")  # other file names should be maze2.png, maze3.png
 
 # ---- TODO: begin robot movement here
 def solveOne():
@@ -92,12 +92,27 @@ def solveTwo():
         turn_left()
         move()
         w2+=1
-        
+def solveThree():
+    w3 = 0
+    turn_right()
+    move()
+    while w3 < 4:
+        turn_left()
+        move()
+        turn_right()
+        w3 += 1
+        if w3 < 4:
+            move()
 
 if wn.bgpic() == "assets/maze1.png":
     solveOne()
 elif wn.bgpic() == "assets/maze2.png":
     solveTwo()
+elif wn.bgpic() == "assets/maze3.png":
+    solveThree()
+else:
+    wn.exitonclick()
+
 
 # ---- end robot movement
 
