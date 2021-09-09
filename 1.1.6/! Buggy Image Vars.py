@@ -5,16 +5,16 @@ import turtle as trtl
 ttl = trtl.Turtle()
 ttl.pensize(40)
 ttl.circle(20)
-w = 6
-y = 70
-z = 380 / w
+wn=trtl.Screen()
+legs = 8
+length = 70
+radAngle = 380 / legs
 ttl.pensize(5)
-n = 0
-while (n < w):
+loops = 0
+while (n < legs):
     ttl.goto(0,0)
-    ttl.setheading(z*n)
-    ttl.forward(y)
+    ttl.setheading(radAngle*n)
+    ttl.forward(length)
     n = n + 1
 ttl.hideturtle()
-wn = trtl.Screen()
 wn.mainloop()
