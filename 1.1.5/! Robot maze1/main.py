@@ -111,6 +111,7 @@ elif wn.bgpic() == "assets/maze2.png":
 elif wn.bgpic() == "assets/maze3.png":
     solveThree()
 else:
+    print("Image name/path was not resolved. Click turtle window to exit.")
     wn.exitonclick()
 
 
