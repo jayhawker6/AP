@@ -6,15 +6,30 @@ ttl = trtl.Turtle()
 ttl.pensize(40)
 ttl.circle(20)
 wn=trtl.Screen()
+## Skeeter Sticks ##
 legs = 8
 length = 70
-radAngle = 380 / legs
+radAngle = 360 / legs
 ttl.pensize(5)
 loops = 0
-while (n < legs):
-    ttl.goto(0,0)
-    ttl.setheading(radAngle*n)
+offset = 0
+while (offset < legs):
+    ttl.goto(0,20)
+    if offset < 4:
+        ttl.setheading(radAngle*(offset*.45)-45)
+    else:
+        ttl.setheading(radAngle*(offset*.45)+84)
     ttl.forward(length)
-    n = n + 1
+    offset = offset + 1
+
+## Eyes ##
+ttl.penup()
+ttl.pencolor("red")
+ttl.goto(0,0)
+ttl.setheading(0)
+ttl.forward(15), ttl.pendown(), ttl.dot(), ttl.penup()
+ttl.backward(30), ttl.pendown(), ttl.dot(), ttl.penup()
+
+## End ##
 ttl.hideturtle()
 wn.mainloop()
