@@ -13,7 +13,7 @@ def bin2mod(fromlist,tolist):
         elif testitem == "101": tolist.append("r-x")
         elif testitem == "110": tolist.append("rw-")
         elif testitem == "111": tolist.append("rwx") # This method means that the further down the correct answer is, the longer it will take.
-        else: tolist.append("You input something wrong here!")
+        else: tolist.append("Incorrect Input! ")
 def oct2bin(fromlist, tolist):
     for item in range(len(fromlist)): tolist.append(format(fromlist[item], '03b'))
 def bin2oct(fromlist, tolist):
@@ -27,7 +27,7 @@ def bin2oct(fromlist, tolist):
         elif testitem == "101": tolist.append("5")
         elif testitem == "110": tolist.append("6")
         elif testitem == "111": tolist.append("7") # This method means that the further down the correct answer is, the longer it will take.
-        else: tolist.append("You input something wrong here!")
+        else: tolist.append("Incorrect Input! ")
 def mod2bin(fromlist,tolist):
     for item in range(len(fromlist)):
         testitem = fromlist[item]
@@ -39,7 +39,7 @@ def mod2bin(fromlist,tolist):
         elif testitem == "r-x": tolist.append("101")
         elif testitem == "rw-": tolist.append("110")
         elif testitem == "rwx": tolist.append("111") # This method means that the further down the correct answer is, the longer it will take.
-        else: tolist.append("You input something wrong here!")
+        else: tolist.append(" Wrong Input! ")
 cls()
 ## First Input ##
 oct1 = []
@@ -86,15 +86,15 @@ bin2mod(bin4,mod4)
 print("Input 4: %s %s %s" % (bin4[0],bin4[1],bin4[2]))
 input("Output 4: %s %s %s and %s %s %s" % (oct4[0],oct4[1],oct4[2],mod4[0],mod4[1],mod4[2]))
 ## Fifth input ##
-oct5 = [], bin5 = [], mod5 = []
+oct5, bin5, mod5 = [], [], []
 mod5.append(input("Input first CHMOD value >> "))
 mod5.append(input("Input second CHMOD value >> "))
 mod5.append(input("Input third CHMOD value >> "))
 mod2bin(mod5,bin5)
 bin2oct(bin5,oct5)
-print("Input 5: %s %s %s" % (bin5[0],bin5[1],bin5[2]))
-input("Output 5: %s %s %s and %s %s %s" % (oct5[0],oct5[1],oct5[2],mod5[0],mod5[1],mod5[2]))
+print("Input 5: %s %s %s" % (mod5[0],mod5[1],mod5[2]))
+input("Output 5: %s %s %s and %s %s %s" % (bin5[0],bin5[1],bin5[2],oct5[0],oct5[1],oct5[2]))
 cls()
 print("Hey so... This was the end of the assignment. I've got nothing left. Soooooo. Yeah bye.")
-time.sleep(5)
-cls() # Exactly 100 lines of code. Very ugly code yes, but you only have to look at 100 lines of it, so things could be much worse. Enjoy the compacted if and for statements ;)
+time.sleep(5) # Exactly 100 lines of code. Very ugly code yes, but you only have to look at 100 lines of it, so things could be much worse.
+cls()         # Enjoy the compacted if and for statements ;) (I would also like to thank my BFF's, Ctrl+C and Ctrl+V)
