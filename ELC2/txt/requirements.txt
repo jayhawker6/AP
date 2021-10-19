@@ -25,3 +25,4 @@ rope==0.19.0
 six==1.16.0
 urllib3==1.26.6
 yarg==0.1.9
+# Along with this, you should make sure you have a solid python installation...
