@@ -14,7 +14,9 @@ def cardIn(setVar):
 ## BEGIN INTERFACE ##
 
 cls()
-validnumbers
-enemynumber = None
-while enemynumber not in range(1, 10, 1):
-    if (enemynumber == "K" or enemynumber == "Q") or (enemynumber == "")
+input = input("Card values seperated by comma and space >> ")
+enemyNumber = "K"
+validNumbers = [1,2,3,4,5,6,7,8,9,"T","J","Q","K","A"]
+while enemyNumber not in range(1, 10, 1):
+    if enemyNumber not in validNumbers:
+        raise Exception(f"{txtcolor.WARNING} CARD RANK NOT IDENTIFIED CORRECTLY!{txtcolor.ENDC}")
