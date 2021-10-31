@@ -1,4 +1,3 @@
 {
-    "python.terminal.executeInFileDir": true,
-    "git.enableCommitSigning": true
+    "python.terminal.executeInFileDir": true
 }
