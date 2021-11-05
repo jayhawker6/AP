@@ -32,12 +32,15 @@ while True:
     if len(userinput) != 22: printWarn(" -=-  INPUT LENGTH IS INCORRECT!  -=- "); continue #We base things off of the character position, so we check the amount of characters
     
     enemyrank = translateRank(userinput[0]) #Take the input enemy rank and make a numerical variable for it
-    enemysuit = userinput[0]
+    enemysuit = userinput[1]
     
-    if int(enemyrank) not in validRanks or enemysuit not in validSuits: printWarn(" -=-  CARD VALUE NOT IDENTIFIED!  -=- "); continue #Check that the translation output a correct numerical value
+    if enemyrank not in validRanks or enemysuit not in validSuits: printWarn(" -=-  ENEMY CARD VALUE NOT IDENTIFIED!  -=- "); continue #Check that the translation output a correct numerical value
     
     print(f"{txtcolor.FAIL}Rank of enemy = %s{txtcolor.ENDC}" % (enemyrank)), os.system('pause')
-    
-
+    dealercard1 = userinput[4:5]; dealercard2 = userinput[8:9]; dealercard3 = userinput[12:13]; dealercard4 = userinput[16:17]; dealercard5 = userinput[20:21]
+    dealerhand = userinput[4:22].split(", ")
+    print(dealerhand)
+    os.system("pause")
+    os.system("exit")
     
 print(f"{txtcolor.OKGREEN}Program ENDED!{txtcolor.ENDC}")
