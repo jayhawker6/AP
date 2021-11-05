@@ -12,7 +12,8 @@ def printWarn(warningText):
     if warningText == None: raise Exception("A warning was not defined in the code")
     print(f"{txtcolor.WARNING}%s{txtcolor.ENDC}" % (warningText)), os.system('Pause'), cls()
 def translateRank(transvar):
-    if transvar == "A": return 0 if transvar == "T": return 10
+    if transvar == "A": return 0
+    if transvar == "T": return 10
     if transvar == "J": return 11
     if transvar == "Q": return 12
     if transvar == "K": return 13
@@ -30,10 +31,13 @@ while True:
     userinput = str(input("Card values seperated by one comma and one space >> "))
     if len(userinput) != 22: printWarn(" -=-  INPUT LENGTH IS INCORRECT!  -=- "); continue #We base things off of the character position, so we check the amount of characters
     
-    enemyrank = translateRank(userinput[0]) #Take the input enemy card and make a numerical variable for it
+    enemyrank = translateRank(userinput[0]) #Take the input enemy rank and make a numerical variable for it
+    enemysuit = userinput[0]
     
-    if int(enemyrank) not in validRanks: printWarn(" -=-  CARD VALUE NOT IDENTIFIED!  -=- "); continue #Check that the translation output a correct numerical value
+    if int(enemyrank) not in validRanks or enemysuit not in validSuits: printWarn(" -=-  CARD VALUE NOT IDENTIFIED!  -=- "); continue #Check that the translation output a correct numerical value
     
     print(f"{txtcolor.FAIL}Rank of enemy = %s{txtcolor.ENDC}" % (enemyrank)), os.system('pause')
-    break
+    
+
+    
 print(f"{txtcolor.OKGREEN}Program ENDED!{txtcolor.ENDC}")
