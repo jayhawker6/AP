@@ -4,7 +4,6 @@ except ImportError:
     raise ImportError("#000 Connected Classes not found!")
 try:
     import os
-    import pyCardDeck as pcd
 except ImportError:
     raise ImportError(f"{txtcolor.FAIL}#001 | A dependancy could not be accessed! Refer to error code for solution!{txtcolor.ENDC}")
 def cls(): os.system('cls' if os.name=='nt' else 'clear')
@@ -115,9 +114,9 @@ for i in range(len(dealerhand)):
 if not coss:
     lowestcard = CardOrder[dealerhand[0]]
     for i in range(len(dealerhand)):
-        if CardOrder[dealerhand[i]] < CardOrder[lowestcard]:
-            lowestcard = dealerhand[i]
-    print(lowestcard)
+        if dealerhand[i] in CardOrder < lowestcard in CardOrder:
+            lowestcard = i
+    print(dealerhand[lowestcard])
         
 
 print(f"{txtcolor.OKGREEN}Program ENDED!{txtcolor.ENDC}")
