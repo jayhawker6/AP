@@ -56,7 +56,7 @@ for i in range(len(dealerhand)):
 if not coss:
     lowestcard = CardOrder[dealerhand[0]]
     for i in range(len(dealerhand)):
-        if CardOrder[dealerhand[i]] < CardOrder[dealerhand[lowestcard]]:
+        if CardOrder[dealerhand[i-1]] < CardOrder[dealerhand[lowestcard]]:
             lowestcard = int(i-1)
     printWarn("The dealer plays the %s of %s" % (PrintValues[coss[lowestcard[0]]],PrintValues[coss[lowestcard[1]]]))
     progend()
