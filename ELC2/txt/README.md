@@ -2,7 +2,7 @@
 
 ## Before Running
 
-This code contains libraries/packages not installed by pip by default. To allow the import statement to work, do the following:
+This USED TO contain libraries/packages not installed by pip by default. If these are present, then to allow the import statement to work, do the following:
 
 ``` python
 pip install -r requirements.txt
