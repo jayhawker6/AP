@@ -37,6 +37,7 @@ screen.tracer(False)
 
 #text rutles that displays the score
 txt_trtl = trtl.Turtle()
+txt_gme_ovr = trtl.Turtle()
 #Makes the turtles for the game
 shape_top_left = trtl.Turtle()
 shape_top_right = trtl.Turtle()
@@ -70,6 +71,8 @@ screen.tracer(True)
 
 
 #text turtle setup
+txt_gme_ovr.ht()
+txt_gme_ovr.color('white')
 txt_trtl.penup()
 txt_trtl.goto(0, 175)
 txt_trtl.color('white')
@@ -145,11 +148,15 @@ def check_button(color_pressed):
         print("done")
 
 #hides turtles
+
+
 def end_game():
+    txt_gme_ovr.st()
     shape_top_left.ht()
     shape_top_right.ht()
     shape_bottom_left.ht()
     shape_bottom_right.ht()
+    txt_gme_ovr.write("Game_Over", font=txt_setup, align='center')
 
 
 
