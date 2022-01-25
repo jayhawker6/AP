@@ -18,8 +18,6 @@ color_bck = '#deb7ff'
 sequence_list = []
 working_list = []
 
-
-correct = True
 pnt_up = 1
 points = 0
 txt_setup = ('arial', 30, 'normal')
@@ -60,14 +58,12 @@ shape_bottom_right.color(color_4)
 screen.bgcolor(color_bck)
 
 
-
 #Move the turtles
 shape_top_left.goto(-80,80)
 shape_top_right.goto(80,80)
 shape_bottom_left.goto(-80,-80)
 shape_bottom_right.goto(80,-80)
 screen.tracer(True)
-
 
 
 #text turtle setup
@@ -87,15 +83,13 @@ def shrink(turtle):
 #updates score
 def txt_updt():
     global points
-    txt_trtl.undo()
+    txt_trtl.clear()
     txt_trtl.write("Points: " + str(points), font=txt_setup, align='center')
 
 #The corresponding squares will lightup depending on the pattern
-def follow_sequence():
-    global correct
+def follow_sequence(correct):
     global sequence_list
     global working_list
-
     if correct == True and len(working_list) == 0:
         rand_num = rand.randint(1,4)
         sequence_list.append(rand_num)
@@ -121,6 +115,13 @@ def follow_sequence():
                 time.sleep(sequence_time)                
                 shape_bottom_right.color(color_4)
                 time.sleep(sequence_time)
+    elif correct == False:
+        txt_gme_ovr.st()
+        shape_top_left.ht()
+        shape_top_right.ht()
+        shape_bottom_left.ht()
+        shape_bottom_right.ht()
+        txt_gme_ovr.write("Game Over", font=txt_setup, align='center')
 
 
 #checks if the button pressed is in the working list
@@ -134,53 +135,33 @@ def check_button(color_pressed):
         if str(color_pressed) in str(check_list):
             points += pnt_up
             txt_updt()
-            correct = True
-            
+            follow_sequence(True)          
         else:
-            correct = False
             sequence_list = []
             check_list = []
-            end_game()
-
+            follow_sequence(False)
         print(correct)
     else:
         
         print("done")
-
-#hides turtles
-
-
-def end_game():
-    txt_gme_ovr.st()
-    shape_top_left.ht()
-    shape_top_right.ht()
-    shape_bottom_left.ht()
-    shape_bottom_right.ht()
-    txt_gme_ovr.write("Game_Over", font=txt_setup, align='center')
-
 
 
 #calls the things needed after the button is pressed
 def check_tp_lft(x,y):
     shrink(shape_top_left)
     check_button(2)
-    follow_sequence()
 def check_tp_rit(x,y):
     shrink(shape_top_right)
     check_button(3)
-    follow_sequence()
 def check_btm_lft(x,y):
     shrink(shape_bottom_left)
     check_button(1)
-    follow_sequence()
 def check_btm_rit(x,y):
     shrink(shape_bottom_right)
     check_button(4)
-    follow_sequence()
 
 
-
-follow_sequence()
+follow_sequence(True)
 #checks if the button is pressed
 shape_top_left.onclick(check_tp_lft)
 shape_top_right.onclick(check_tp_rit)
